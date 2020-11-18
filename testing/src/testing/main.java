@@ -21,6 +21,9 @@ public class main {
 		printExam();
 		printWork();
 		printSkill();
+		Average();
+		Grade();
+		
 		
 
 	}
@@ -108,7 +111,7 @@ public class main {
 	public static void printAward() {
 		Scanner in = new Scanner (System.in);
 		
-		System.out.print("enter your award");
+		System.out.print("enter your award: ");
 		String award = in.next();
 		System.out.println("award " + award);
 
@@ -161,5 +164,59 @@ public class main {
 		String skill = in.next();
 		System.out.println("skill " + skill);
 	}
-
+	
+	public static void Average() {
+		Scanner in = new Scanner(System.in);
+		
+		System.out.print("Quiz score: ");
+		int a = in.nextInt();
+		System.out.print("Mid-term score: ");
+		int b= in.nextInt();
+		System.out.print("Final score: ");
+		int c= in.nextInt();
+		int aver = (a+b+c)/3;
+	
+		//calculate average score and grade
+		System.out.println("Average score: " + aver);
+		if (aver >= 90 && aver <= 100) {
+			System.out.println("Grade A");
+		} else if (aver >= 70 && aver < 90) {
+			System.out.println("Grade B");
+		} else if (aver >= 50 && aver < 70) {
+			System.out.println("Grade C");
+		} else if (aver < 50) {
+			System.out.println("Grade F");
+		}
+	}
+	
+	public static void Grade() {
+		Scanner in = new Scanner(System.in);
+		
+		System.out.print("enter your grade: ");
+		String grade = in.next();
+		
+		switch (grade) {
+			case "A+":
+				System.out.println("Your cgpa is 4.00");
+				break;
+			case "A":
+				System.out.println("Your cgpa is 3.67");
+				break;
+			case "B":
+				System.out.println("Your cgpa is 3");
+				break;
+			case "C":
+				System.out.println("Your cgpa is 2.67");
+				break;
+			case "D":
+				System.out.println("Your cgpa is 2.00");
+				break;
+			case "F":
+				System.out.println("Your cgpa is 1.00");
+				break;
+			default:
+				System.out.println("The grade is unreadable");
+								
+		}
+	}
 }
